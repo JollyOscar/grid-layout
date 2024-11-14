@@ -1,2 +1,134 @@
 /* imported google web fonts: 'Bebas Neue','Joan','Kdam Thmor Pro','League Gothic','Shadows Into Light','Raleway','Roboto Slab' */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Joan&family=Kdam+Thmor+Pro&family=League+Gothic&family=Raleway&family=Roboto+Slab&family=Shadows+Into+Light&display=swap');
+
+body {
+    margin: auto;
+    max-width: 800px;
+    /* width: 90%; */
+    color: #5d5d5d;
+}
+
+header {
+    padding-top: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+header p.heading {
+    font-size: 2.5rem;
+    color: #5d5d5d;
+}
+
+header p {
+    margin: 0;
+    color: #a8b2b9;
+}
+
+.container {
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "plane garbage question"
+        "warning warning question"
+        "bug bug bug"
+        "skull ruler ruler";
+    font-size: 1.5rem;
+    gap: 2rem;
+}
+
+.plane {
+    grid-area: plane;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7rem;
+    line-height: 1.15;
+}
+
+.garbage {
+    grid-area: garbage;
+    font-family: 'Joan', serif;
+    font-size: 1.2rem;
+}
+
+.question {
+    grid-area: question;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    text-align: right;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+.warning {
+    grid-area: warning;
+    font-family: 'League Gothic', sans-serif;
+    font-size: 1.15rem;
+    padding-right: 1rem;
+}
+
+.bug {
+    grid-area: bug;
+    font-family: 'Shadows Into Light', sans-serif;
+    font-size: 1.55rem;
+    color: #333;
+}
+
+.skull {
+    grid-area: skull;
+    font-family: 'Raleway', serif;
+    font-size: 1.3rem;
+}
+
+.ruler {
+    grid-area: ruler;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    text-align: right;
+}
+
+.author {
+    display: block;
+    font-size: smaller
+}
+
+i {
+    color: #a8b2b9;
+    font-size: smaller;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        width: 90%;
+    }
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "plane garbage"
+        "question question"
+        "warning bug"
+        "skull ruler";
+    }
+
+    .plane, .garbage, .question, .warning, .bug, .skull, .ruler {
+    text-align: left;
+    padding: 10px 0;
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "plane"
+        "garbage"
+        "question"
+        "warning"
+        "bug"
+        "skull"
+        "ruler";
+    }
+}
